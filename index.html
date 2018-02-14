@@ -29,34 +29,38 @@
 
 
     <body ng-app="app" ng-controller="appCtrl">
-        <div id="page-content" ng-init="init()" class="padding-md">
+        <div id="page" class="full-height" ng-init="init()">
+            <div id="page-content" class="padding-md">
+              <h1>
+                  Guess a number!
+              </h1>
 
+              <div class="row padding-md">
+                  <div class="col-md-4">
+                      <input type="text" ng-model="currentGuess" ng-keyup="$event.keyCode == 13 ? guess() : null" class="padding-sm"/>
+                  </div>
+                  <div class="col-md-2">
+                      <button class="btn btn-default" ng-click="guess()">Guess!</button>
+                  </div>
+              </div>
 
-            <h1>
-                Guess a number!
-            </h1>
+              <div class="row padding-md border-basic-md" style="border-radius: 10px;">
+                  <div class="col-md-12" style="width: 100%;">
+                      <div id="low"    class="outside" style="float: left;"><span class="pull-right">0</span></div>
+                      <div id="middle" class="inside text-center" style="float: left;">?</div>
+                      <div id="high"   class="outside" style="float: left;"><span class="pull-left">100</span></div>
+                  </div>
+              </div>
 
-
-            <div class="row padding-md">
+              <div class="row">
                 <div class="col-md-4">
-                    <input type="text" class="padding-sm"/>
+                  <ul id="guesses-holder" ng-repeat="x in guesses">
+                    <li>{{x}}</li>
+
+                  </ul>
                 </div>
-                <div class="col-md-2">
-                    <button class="btn btn-default" ng-click="guess()">Guess!</button>
-                </div>
-            </div>
-
-            <div class="row padding-md">
-                <div class="col-md-12" style="width: 1060px">
-                    <div id="low"    class="outside" style="float: left;"><span class="pull-right">0</span></div>
-                    <div id="middle" class="inside text-center" style="float: left;">?</div>
-                    <div id="high"   class="outside" style="float: left;"><span class="pull-left">100</span></div>
-                </div>
-            </div>
-
-
-
-
+              </div>
+          </div>
         </div>
     </body>
 

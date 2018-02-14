@@ -56,12 +56,19 @@ a:visited {
   height: 100%;
   width: 3%;
   min-width: 30px;
-  background-color: red;
+  background-color: #d8114c;
   color: white;
 }
 
 .inside{
   height: 100%;
   width: 94%;
-  background-color: lightgrey;
+  min-width: 30px;
+  background-color: #8cffb0;
+}
+
+
+#page {
+  background-color: #c6f5ff;
+
 }
